@@ -1,0 +1,12 @@
+{
+	"nativescript": {
+		"id": "org.nativescript.nativescriptprogressbardemo",
+		"tns-android": {
+			"version": "1.6.3"
+		}
+	},
+	"dependencies": {
+		"nativescript-progressbar": "file:..",
+		"tns-core-modules": "latest"
+	}
+}
