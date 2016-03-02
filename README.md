@@ -92,16 +92,16 @@ A set of XML widget to create native Progress Bars in NativeScript apps.
 
 ## Attributes
 
-| Property                | Description                                     | Values       | Notes |
-|-------------------------|-------------------------------------------------|--------------|-|
-| progress                | Sets the progress value                         | number 0-100 | |
-| text                    | Sets the text in the middle of the progress bar | text         | |
-| textSize                | Sets the size of the text  color of the button  | number       | |
-| widthProgressBackground | Sets the size of the progress background        | number       | |
-| widthProgressBarLine    | Sets the size of the progress bar               | number       | |
-| backgroundColor         | Sets the color of the progress background       | color        | |
-| progressColor           | Sets the color of the progress bar              | color        | |
-| linearGradient          | Sets the progress bar color to gradient         | boolean      | Not available for ArcProgressBar |
+| Property                | Description                                     | Values       |
+|-------------------------|-------------------------------------------------|--------------|
+| progress                | Sets the progress value                         | number 0-100 |
+| text                    | Sets the text in the middle of the progress bar | text         |
+| textSize                | Sets the size of the text  color of the button  | number       |
+| widthProgressBackground | Sets the size of the progress background        | number       |
+| widthProgressBarLine    | Sets the size of the progress bar               | number       |
+| backgroundColor         | Sets the color of the progress background       | color        |
+| progressColor           | Sets the color of the progress bar              | color        |
+| linearGradient          | Sets the progress bar color to gradient         | boolean      |
                
 
 ## Android Notes
