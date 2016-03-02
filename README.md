@@ -54,6 +54,8 @@ A set of XML widget to create native Progress Bars in NativeScript apps.
 
 ### ArcProgressBar
 
+#### Note that ArcProgressBar doesn't have linearGradient property
+
 ```XML
 <page xmlns:pb="nativescript-progressbar">
     <pb:ArcProgressBar
@@ -90,17 +92,17 @@ A set of XML widget to create native Progress Bars in NativeScript apps.
 
 ## Attributes
 
-| Property                | CircleProgressBar  | CircleSegmentBar | ArcProgressBar | LineProgressBar | Description                                     | Values       |
-|-------------------------|--------------------|------------------|----------------|-----------------|-------------------------------------------------|--------------|
-| progress                |         X          |         X        |        X       |        X        | Sets the progress value                         | number 0-100 |
-| text                    |         X          |         X        |        X       |        X        | Sets the text in the middle of the progress bar | text         |
-| textSize                |         X          |         X        |        X       |        X        | Sets the size of the text  color of the button  | number       |
-| widthProgressBackground |         X          |         X        |        X       |        X        | Sets the size of the progress background        | number       |
-| widthProgressBarLine    |         X          |         X        |        X       |        X        | Sets the size of the progress bar               | number       |
-| backgroundColor         |         X          |         X        |        X       |        X        | Sets the color of the progress background       | color        |
-| progressColor           |         X          |         X        |        X       |        X        | Sets the color of the progress bar              | color        |
-| linearGradient          |         X          |         X        |                |        X        | Sets the progress bar color to gradient         | boolean      |
-                 
+| Property                | Description                                     | Values       | Notes |
+|-------------------------|-------------------------------------------------|--------------|-|
+| progress                | Sets the progress value                         | number 0-100 | |
+| text                    | Sets the text in the middle of the progress bar | text         | |
+| textSize                | Sets the size of the text  color of the button  | number       | |
+| widthProgressBackground | Sets the size of the progress background        | number       | |
+| widthProgressBarLine    | Sets the size of the progress bar               | number       | |
+| backgroundColor         | Sets the color of the progress background       | color        | |
+| progressColor           | Sets the color of the progress bar              | color        | |
+| linearGradient          | Sets the progress bar color to gradient         | boolean      | Not available for ArcProgressBar |
+               
 
 ## Android Notes
 - We're using [Android-ProgressViewsLib](https://android-arsenal.com/details/1/3186) by [natasam](https://android-arsenal.com/user/natasam)
