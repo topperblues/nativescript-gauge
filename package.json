@@ -1,8 +1,8 @@
 {
   "name": "nativescript-progressbar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "XML widget to create native Progress Bars in NativeScript apps.",
-   "main": "circleProgressBar.js",
+   "main": "components.js",
   "nativescript": {
     "platforms": {
       "android": "1.6.0",
@@ -19,6 +19,8 @@
     "script",
     "CircleProgressBar",
     "CircleSegmentBar",
+    "ArcSegmentBar",
+    "LineSegmentBar",
     "android",
     "ios",
     "sebawita"

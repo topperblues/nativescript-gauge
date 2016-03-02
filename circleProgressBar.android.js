@@ -1,6 +1,5 @@
 "use strict";
 var color = require("color");
-//import proxy = require("ui/core/proxy");
 var common = require("./circleProgressBar-common");
 global.moduleMerge(common, exports);
 var CircleProgressBar = (function (_super) {

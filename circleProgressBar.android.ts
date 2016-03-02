@@ -4,8 +4,6 @@ import observable = require("data/observable");
 import dependencyObservable = require("ui/core/dependency-observable");
 import color = require("color");
 
-//import proxy = require("ui/core/proxy");
-
 import common = require("./circleProgressBar-common");
 global.moduleMerge(common, exports);
 
