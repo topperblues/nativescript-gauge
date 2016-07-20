@@ -6,79 +6,90 @@ var CircleProgressBar = (function (_super) {
     __extends(CircleProgressBar, _super);
     function CircleProgressBar(context) {
         _super.call(this);
+        this._ios = new GaugeView();
+
     }
-    Object.defineProperty(CircleProgressBar.prototype, "android", {
+    Object.defineProperty(CircleProgressBar.prototype, "ios", {
         get: function () {
-            return this._android;
+            return this._ios;
         },
         enumerable: true,
         configurable: true
     });
-    CircleProgressBar.prototype._createUI = function () {
-        this._android = new com.natasa.progressviews.CircleProgressBar(this._context);
-    };
     return CircleProgressBar;
 }(common.CircleProgressBar));
 exports.CircleProgressBar = CircleProgressBar;
 //progress property
 function onProgressPropertyChanged(data) {
     var mycomponent = data.object;
-    mycomponent.android.setProgress(data.newValue);
+    mycomponent.ios.percentage = data.newValue;
 }
 common.CircleProgressBar.progressProperty.metadata.onSetNativeValue = onProgressPropertyChanged;
 //text property
 function onTextPropertyChanged(data) {
     var mycomponent = data.object;
-    mycomponent.android.setText(data.newValue);
+    mycomponent.ios.labelText = data.newValue;
 }
 common.CircleProgressBar.textProperty.metadata.onSetNativeValue = onTextPropertyChanged;
 //textSize property
 function onTextSizePropertyChanged(data) {
     var mycomponent = data.object;
-    mycomponent.android.setTextSize(data.newValue);
+    mycomponent.ios.labelFont = UIFont.systemFontOfSize(data.newValue);
 }
 common.CircleProgressBar.textSizeProperty.metadata.onSetNativeValue = onTextSizePropertyChanged;
 //textColor property
 function onTextColorPropertyChanged(data) {
     var mycomponent = data.object;
-    var droidColor = new color.Color(data.newValue).android;
-    mycomponent.android.setTextColor(droidColor);
+    var droidColor = new color.Color(data.newValue).ios;
+    mycomponent.labelColor = droidColor;
 }
 common.CircleProgressBar.textColorProperty.metadata.onSetNativeValue = onTextColorPropertyChanged;
 //textStyle property
 function onTextStylePropertyChanged(data) {
     var mycomponent = data.object;
+    var fontSize = mycomponent.ios.labelFont.pointSize;
+    var color = mycomponent.labelColor;
+    console.dir(color);
     switch (data.newValue){
-        case "bold-italic":
-            mycomponent.android.setTypeface(null, 3); //Typeface.BOLD_ITALIC = 3
+        case "thin":
+            mycomponent.ios.labelFont = UIFont.systemFontOfSizeWeight(fontSize, UIFontWeightThin);
+            break;
+        case "light":
+            mycomponent.ios.labelFont = UIFont.systemFontOfSizeWeight(fontSize, UIFontWeightLight);
+            break;
+        case "regular":
+            mycomponent.ios.labelFont = UIFont.systemFontOfSizeWeight(fontSize, UIFontWeightRegular);
+            break;
+        case "medium":
+            mycomponent.ios.labelFont = UIFont.systemFontOfSizeWeight(fontSize, UIFontWeightMedium);
+            break;
+        case "semibold":
+            mycomponent.ios.labelFont = UIFont.systemFontOfSizeWeight(fontSize, UIFontWeightSemibold);
+            break;
         case "bold":
-            mycomponent.android.setTypeface(null, 1); //Typeface.BOLD = 1
-        case "italic":
-            mycomponent.android.setTypeface(null, 2); //Typeface.ITALIC = 2
-        case "normal":
-            mycomponent.android.setTypeface(null, 0); //Typeface.NORMAL = 0
+            mycomponent.ios.labelFont = UIFont.systemFontOfSizeWeight(fontSize, UIFontWeightBold);
     }
-
+    mycomponent.labelColor = color;
 }
 common.CircleProgressBar.textStyleProperty.metadata.onSetNativeValue = onTextStylePropertyChanged;
 //widthProgressBackground property
 function onWidthProgressBackgroundPropertyChanged(data) {
     var mycomponent = data.object;
-    mycomponent.android.setWidthProgressBackground(data.newValue);
+    mycomponent.ios.thickness = data.newValue;
 }
 common.CircleProgressBar.widthProgressBackgroundProperty.metadata.onSetNativeValue = onWidthProgressBackgroundPropertyChanged;
 //widthProgressBarLine property
 function onWidthProgressBarLinePropertyPropertyChanged(data) {
     var mycomponent = data.object;
-    mycomponent.android.setWidthProgressBarLine(data.newValue);
+    mycomponent.ios.thickness = data.newValue;
 }
 common.CircleProgressBar.widthProgressBarLineProperty.metadata.onSetNativeValue = onWidthProgressBarLinePropertyPropertyChanged;
 //backgroundColor property
 function onBackgroundColorPropertyPropertyChanged(data) {
     if (color.Color.isValid(data.newValue)) {
         var mycomponent = data.object;
-        var droidColor = new color.Color(data.newValue).android;
-        mycomponent.android.setBackgroundColor(droidColor);
+        var droidColor = new color.Color(data.newValue).ios;
+        mycomponent.ios.gaugeBackgroundColor = droidColor;
     }
     else {
         console.log("The background color: " + data.newValue + " is invalid.");
@@ -89,8 +100,8 @@ common.CircleProgressBar.backgroundColorProperty.metadata.onSetNativeValue = onB
 function onProgressColorPropertyPropertyChanged(data) {
     if (color.Color.isValid(data.newValue)) {
         var mycomponent = data.object;
-        var droidColor = new color.Color(data.newValue).android;
-        mycomponent.android.setProgressColor(droidColor);
+        var droidColor = new color.Color(data.newValue).ios;
+        mycomponent.ios.gaugeColor = droidColor;
     }
     else {
         console.log("The progress color: " + data.newValue + " is invalid.");
@@ -100,9 +111,7 @@ common.CircleProgressBar.progressColorProperty.metadata.onSetNativeValue = onPro
 //linearGradient property
 function onLinearGradientPropertyPropertyChanged(data) {
     var mycomponent = data.object;
-    mycomponent.android.setLinearGradientProgress(data.newValue);
 }
 common.CircleProgressBar.linearGradientProperty.metadata.onSetNativeValue = onLinearGradientPropertyPropertyChanged;
-//# sourceMappingURL=circleProgressBar.android.js.map
-
+//# sourceMappingURL=circleProgressBar.ios.js.map
 

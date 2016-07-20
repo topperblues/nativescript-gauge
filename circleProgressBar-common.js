@@ -37,6 +37,26 @@ var CircleProgressBar = (function (_super) {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(CircleProgressBar.prototype, "textColor", {
+        get: function () {
+            return this._getValue(CircleProgressBar.textColorProperty);
+        },
+        set: function (value) {
+            this._setValue(CircleProgressBar.textColorProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(CircleProgressBar.prototype, "textStyle", {
+        get: function () {
+            return this._getValue(CircleProgressBar.textStyleProperty);
+        },
+        set: function (value) {
+            this._setValue(CircleProgressBar.textStyleProperty, value);
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(CircleProgressBar.prototype, "widthProgressBackground", {
         get: function () {
             return this._getValue(CircleProgressBar.widthProgressBackgroundProperty);
@@ -93,6 +113,10 @@ var CircleProgressBar = (function (_super) {
     CircleProgressBar.textProperty = new dependencyObservable.Property("text", "CircleProgressBar", new proxy.PropertyMetadata(false));
     //textSize property
     CircleProgressBar.textSizeProperty = new dependencyObservable.Property("textSize", "CircleProgressBar", new proxy.PropertyMetadata(false));
+    //textColor property
+    CircleProgressBar.textColorProperty = new dependencyObservable.Property("textColor", "CircleProgressBar", new proxy.PropertyMetadata(false));
+    //textStyle property
+    CircleProgressBar.textStyleProperty = new dependencyObservable.Property("textStyle", "CircleProgressBar", new proxy.PropertyMetadata(false));
     //widthProgressBackground property
     CircleProgressBar.widthProgressBackgroundProperty = new dependencyObservable.Property("widthProgressBackground", "CircleProgressBar", new proxy.PropertyMetadata(false));
     //widthProgressBarLine property
