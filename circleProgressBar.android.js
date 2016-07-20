@@ -48,16 +48,19 @@ common.CircleProgressBar.textColorProperty.metadata.onSetNativeValue = onTextCol
 //textStyle property
 function onTextStylePropertyChanged(data) {
     var mycomponent = data.object;
+
+    /*
     switch (data.newValue){
         case "bold-italic":
-            mycomponent.android.setTypeface(null, 3); //Typeface.BOLD_ITALIC = 3
+            mycomponent.android.setTypeface(android.graphics.Typeface.create(null, android.graphics.Typeface.BOLD_ITALIC)); //Typeface.BOLD_ITALIC = 3
         case "bold":
-            mycomponent.android.setTypeface(null, 1); //Typeface.BOLD = 1
+            mycomponent.android.setTypeface(android.graphics.Typeface.create(null, android.graphics.Typeface.BOLD)); //Typeface.BOLD = 1
         case "italic":
-            mycomponent.android.setTypeface(null, 2); //Typeface.ITALIC = 2
+            mycomponent.android.setTypeface(android.graphics.Typeface.create(null, android.graphics.Typeface.ITALIC)); //Typeface.ITALIC = 2
         case "normal":
-            mycomponent.android.setTypeface(null, 0); //Typeface.NORMAL = 0
+            mycomponent.android.setTypeface(android.graphics.Typeface.create(null, android.graphics.Typeface.NORMAL)); //Typeface.NORMAL = 0
     }
+    */
 
 }
 common.CircleProgressBar.textStyleProperty.metadata.onSetNativeValue = onTextStylePropertyChanged;

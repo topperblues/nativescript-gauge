@@ -21,7 +21,6 @@ Android and Ios
                        android:textSize="100"
                        android:widthProgressBackground="0"
                        android:widthProgressBarLine="20"
-                       android:textStyle="normal"
                        ios:textSize="60"
                        ios:widthProgressBackground="2"
                        ios:widthProgressBarLine="3"
@@ -52,7 +51,7 @@ Android and Ios
 | backgroundColor         | Sets the color of the progress background       | color        |
 | progressColor           | Sets the color of the progress bar              | color        |
 
-Android textStyle options: bold-italic, bold, italic, normal
+textStyle work only in ios:
 Ios textStyle options: thin, light, regular, medium, semibold, bold
 
 
