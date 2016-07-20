@@ -16,15 +16,22 @@ Android and Ios
 ```XML
 <page xmlns:pb="nativescript-progressbar">
     <pb:CircleProgressBar
-        progress="{{progress}}"
-        text="{{message}}"
-        textSize="50"
-        widthProgressBackground="20"
-        widthProgressBarLine="50"
-        backgroundColor="red"
-        progressColor="blue"
-        linearGradient="false"
-        width="200"
+       progress="{{progress}}"
+                       text="{{message}}"
+                       android:textSize="100"
+                       android:widthProgressBackground="0"
+                       android:widthProgressBarLine="20"
+                       android:textStyle="normal"
+                       ios:textSize="60"
+                       ios:widthProgressBackground="2"
+                       ios:widthProgressBarLine="3"
+                       ios:textStyle="thin"
+                       textColor="white"
+                       backgroundColor="white"
+                       progressColor="#F29100"
+                       linearGradient="false"
+                       width="100"
+                       height="100"
     />
 </page>
 ```
@@ -45,7 +52,9 @@ Android and Ios
 | backgroundColor         | Sets the color of the progress background       | color        |
 | progressColor           | Sets the color of the progress bar              | color        |
 
-               
+Android textStyle options: bold-italic, bold, italic, normal
+Ios textStyle options: thin, light, regular, medium, semibold, bold
+
 
 ## Notes
 - We're using [Android-ProgressViewsLib](https://android-arsenal.com/details/1/3186) by [natasam](https://android-arsenal.com/user/natasam)

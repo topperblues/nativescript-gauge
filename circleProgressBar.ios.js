@@ -41,15 +41,14 @@ common.CircleProgressBar.textSizeProperty.metadata.onSetNativeValue = onTextSize
 function onTextColorPropertyChanged(data) {
     var mycomponent = data.object;
     var droidColor = new color.Color(data.newValue).ios;
-    mycomponent.labelColor = droidColor;
+    mycomponent.ios.labelColor = droidColor;
 }
 common.CircleProgressBar.textColorProperty.metadata.onSetNativeValue = onTextColorPropertyChanged;
 //textStyle property
 function onTextStylePropertyChanged(data) {
     var mycomponent = data.object;
     var fontSize = mycomponent.ios.labelFont.pointSize;
-    var color = mycomponent.labelColor;
-    console.dir(color);
+    var color = mycomponent.ios.labelColor;
     switch (data.newValue){
         case "thin":
             mycomponent.ios.labelFont = UIFont.systemFontOfSizeWeight(fontSize, UIFontWeightThin);
@@ -69,7 +68,7 @@ function onTextStylePropertyChanged(data) {
         case "bold":
             mycomponent.ios.labelFont = UIFont.systemFontOfSizeWeight(fontSize, UIFontWeightBold);
     }
-    mycomponent.labelColor = color;
+    mycomponent.ios.labelColor = color;
 }
 common.CircleProgressBar.textStyleProperty.metadata.onSetNativeValue = onTextStylePropertyChanged;
 //widthProgressBackground property
